@@ -4,10 +4,66 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{E9C7FDCE-D52A-8D73-7EB0-C5296AF258F6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{96fed8b7-a601-4fbd-90df-03d81efd3405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine">
+      <UniqueIdentifier>{4a20b2a9-d914-4950-a243-baaf4bcd62b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\game\src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\game\ECSManager.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\IScene.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\AssetsManager.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\Engine.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\GMath.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\Renderer.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\Window.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\game\ECSManager.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\IScene.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\AssetsManager.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\Defines.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\Engine.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\GMath.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\IGame.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\Renderer.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine\Window.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
