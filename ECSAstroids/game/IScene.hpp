@@ -26,4 +26,5 @@ protected:
 	bool isLocking{ true };
 	bool isTransparent{ false };
 };
+
 #endif //GAMEIMPL_I_SCENE_HPP

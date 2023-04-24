@@ -168,6 +168,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\engine\AssetsManager.hpp" />
+    <ClInclude Include="..\engine\Defines.hpp" />
+    <ClInclude Include="..\engine\Engine.hpp" />
+    <ClInclude Include="..\engine\GMath.hpp" />
+    <ClInclude Include="..\engine\IGame.hpp" />
+    <ClInclude Include="..\engine\Renderer.hpp" />
+    <ClInclude Include="..\engine\Window.hpp" />
+    <ClInclude Include="..\game\ECSManager.hpp" />
+    <ClInclude Include="..\game\IScene.hpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\engine\AssetsManager.cpp" />
     <ClCompile Include="..\engine\Engine.cpp" />
     <ClCompile Include="..\engine\GMath.cpp" />
@@ -181,17 +192,6 @@
     <ProjectReference Include="raylib.vcxproj">
       <Project>{8898EA18-743A-15EF-5DF5-284349369C3F}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\engine\AssetsManager.hpp" />
-    <ClInclude Include="..\engine\Defines.hpp" />
-    <ClInclude Include="..\engine\Engine.hpp" />
-    <ClInclude Include="..\engine\GMath.hpp" />
-    <ClInclude Include="..\engine\IGame.hpp" />
-    <ClInclude Include="..\engine\Renderer.hpp" />
-    <ClInclude Include="..\engine\Window.hpp" />
-    <ClInclude Include="..\game\ECSManager.hpp" />
-    <ClInclude Include="..\game\IScene.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
