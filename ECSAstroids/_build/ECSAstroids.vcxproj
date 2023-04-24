@@ -23,6 +23,7 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ECSAstroids</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -101,6 +102,7 @@
       <AdditionalIncludeDirectories>..\game;..\game\src;..\game\include;..\raylib-master\src;..\raylib-master\src\external;..\raylib-master\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,7 +178,10 @@
     <ClInclude Include="..\engine\Renderer.hpp" />
     <ClInclude Include="..\engine\Window.hpp" />
     <ClInclude Include="..\game\ECSManager.hpp" />
+    <ClInclude Include="..\game\Game.hpp" />
     <ClInclude Include="..\game\IScene.hpp" />
+    <ClInclude Include="..\game\SceneGame.hpp" />
+    <ClInclude Include="SceneGame.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\engine\AssetsManager.cpp" />
@@ -185,7 +190,8 @@
     <ClCompile Include="..\engine\Renderer.cpp" />
     <ClCompile Include="..\engine\Window.cpp" />
     <ClCompile Include="..\game\ECSManager.cpp" />
-    <ClCompile Include="..\game\IScene.cpp" />
+    <ClCompile Include="..\game\Game.cpp" />
+    <ClCompile Include="..\game\SceneGame.cpp" />
     <ClCompile Include="..\game\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -42,15 +42,19 @@
     <ClInclude Include="..\engine\Window.hpp">
       <Filter>engine</Filter>
     </ClInclude>
+    <ClInclude Include="SceneGame.hpp" />
+    <ClInclude Include="..\game\SceneGame.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\Game.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\game\src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\game\ECSManager.cpp">
-      <Filter>game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game\IScene.cpp">
       <Filter>game</Filter>
     </ClCompile>
     <ClCompile Include="..\engine\AssetsManager.cpp">
@@ -67,6 +71,12 @@
     </ClCompile>
     <ClCompile Include="..\engine\Window.cpp">
       <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\SceneGame.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\Game.cpp">
+      <Filter>game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
