@@ -43,3 +43,4 @@ using str = std::string;
 	#pragma warning Unknown dynamic link import/export semantics.
 #endif
 
+#endif //ENGINEIMPL_DEFINES_HPP
