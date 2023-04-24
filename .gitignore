@@ -397,8 +397,3 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 SDL
-
-ECSAstroids/raylib-master
-ECSAstroids/_build
-ECSAstroids/_bin
-ECSAstroids/.vs
