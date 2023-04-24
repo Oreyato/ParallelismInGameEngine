@@ -1,6 +1,7 @@
 #include "Window.hpp"
 #include "raylib.h"
 
+
 Window::Window(i32 widthP, i32 heightP, str titleP) :
 	width{ widthP },
 	height{ heightP },
