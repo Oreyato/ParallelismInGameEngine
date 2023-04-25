@@ -1,4 +1,5 @@
 #include "EcsManager.hpp"
+#include "Consts.hpp"
 
 u64 ECSManager::maxId = 0;
 
@@ -54,10 +55,34 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 void ECSManager::SystemPhysicsUpdate(f32 dt)
 {
 	for (auto& transform : transforms) {
+		//v Update position ==============================================
+		// Based on velocity ====================
 		const auto& body = GetComponent<Rigidbody2D>(transform.entityId);
 		const Vector2 velocity = body.velocity;
 
 		transform.pos = { transform.pos.x + velocity.x * dt, transform.pos.y + velocity.y * dt };
+	
+		// Based on screen position =============
+		const auto& sprite = GetComponent<Sprite>(transform.entityId);
+		const int texHeight = sprite.tex.height;
+		const int texWidth = sprite.tex.width;
+		//const int halfTextHeight = texHeight / 2.0f;
+		//const int halfTextWidth = texWidth / 2.0f;
+
+		if (transform.pos.x + texWidth < 0) {
+			transform.pos.x = Consts::WINDOW_WIDTH;
+		}
+		else if (transform.pos.x > Consts::WINDOW_WIDTH) {
+			transform.pos.x = 0 - texWidth;
+		}
+		else if (transform.pos.y + texHeight < 0) {
+			transform.pos.y = Consts::WINDOW_HEIGHT;
+		}
+		else if (transform.pos.y > Consts::WINDOW_HEIGHT) {
+			transform.pos.y = 0 - texHeight;
+		}
+
+		//^ Update position ==============================================	
 	}
 }
 
