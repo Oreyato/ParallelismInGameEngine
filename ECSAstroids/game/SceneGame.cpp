@@ -33,28 +33,30 @@ void SceneGame::Load() {
 	// -- SHIP --
 	u64 ship = ecs->CreateEntity();
 	Transform2D& shipTransform = ecs->CreateTransform2DComponent(ship);
-	shipTransform.pos = { 100, 100 };
+	shipTransform.pos = { 100.0f, 100.0f };
 
 	Sprite& shipSprite = ecs->CreateSpriteComponent(ship, "Ship");
 	Rigidbody2D& shipRb = ecs->CreateRigidbody2DComponent(ship, Vector2{ 0, 0 }, shipSprite.srcRect);
-	shipRb.velocity = { 40, 10 };
+	shipRb.velocity = { 40.0f, 10.0f };
 	  
 	// -- ASTROIDS --
-	i16 maxAstroidsCount{ 10 };
+	// Random values
+	i32 maxAstroidsCount{ 10 };
 	i16 maxXPos = 1280 * 0.9f;
 	i16 maxYPos = 720 * 0.9f;
 	i16 maxVelocity = 50;
 	i16 minVelocity = -50;
 
+	// Spawn astroids
 	for (i16 i = 0; i < maxAstroidsCount; i++) {
 		// Random position
-		int randXPos = (rand() % maxXPos);
-		int randYPos = (rand() % maxYPos);
+		float randXPos = (float)(rand() % maxXPos);
+		float randYPos = (float)(rand() % maxYPos);
 		Vector2 randPos = { randXPos, randYPos };
 
 		// Random velocity
-		int randXVel = (rand() % (maxVelocity - minVelocity)) + minVelocity;
-		int randYVel = (rand() % (maxVelocity - minVelocity)) + minVelocity;
+		float randXVel = (float)(rand() % (maxVelocity - minVelocity)) + minVelocity;
+		float randYVel = (float)(rand() % (maxVelocity - minVelocity)) + minVelocity;
 		Vector2 randVel = { randXVel, randYVel };
 		
 		u64 astroid = ecs->CreateEntity();
