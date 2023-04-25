@@ -51,6 +51,16 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 	FindEntity(entityId).components[iComponentIndex] = newComponentId;
 }
 
+void ECSManager::SystemPhysicsUpdate(f32 dt)
+{
+	for (auto& transform : transforms) {
+		const auto& body = GetComponent<Rigidbody2D>(transform.entityId);
+		const Vector2 velocity = body.velocity;
+
+		transform.pos = { transform.pos.x + velocity.x * dt, transform.pos.y + velocity.y * dt };
+	}
+}
+
 void ECSManager::SystemSpriteDraw() {
 	for (auto& sprite : sprites) {
 		Color colorAlpha{ 255, 255, 255, sprite.opacity };
@@ -101,10 +111,5 @@ void ECSManager::PrepareDraw() {
 		const auto& transform = GetComponent<Transform2D>(sprite.entityId);
 		sprite.dstRect = { transform.pos.x, transform.pos.y, static_cast<float>(sprite.tex.width) * transform.scale.x, static_cast<float>(sprite.tex.height) * transform.scale.y };
 	}
-}
-
-void ECSManager::SystemPhysicsUpdate(f32 dt)
-{
-
 }
 
