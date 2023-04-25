@@ -51,6 +51,9 @@
     <ClInclude Include="..\game\Components.hpp">
       <Filter>game</Filter>
     </ClInclude>
+    <ClInclude Include="..\game\Consts.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\game\src\Main.cpp">

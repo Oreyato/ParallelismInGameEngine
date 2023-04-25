@@ -5,6 +5,7 @@ u64 ECSManager::maxId = 0;
 
 
 void ECSManager::UpdateScene(f32 dt) {
+	SystemInputUpdate();
 	SystemPhysicsUpdate(dt);
 }
 
@@ -52,13 +53,40 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 	FindEntity(entityId).components[iComponentIndex] = newComponentId;
 }
 
+
+void ECSManager::SystemInputUpdate()
+{
+	for (auto& controller : controllers) {
+		auto& rigidBody = GetComponent<Rigidbody2D>(controller.entityId);
+
+		// Forward/backward movement
+		if (IsKeyDown(controller.forwardKey)) {
+			rigidBody.forwardSpeed += controller.maxForwardSpeed;
+		}
+		if (IsKeyDown(controller.backwardKey)) {
+			rigidBody.forwardSpeed -= controller.maxForwardSpeed;
+		}
+		// Angular movement
+		if (IsKeyDown(controller.clockwiseKey)) {
+			rigidBody.angularSpeed -= controller.maxAngularSpeed;
+		}
+		if (IsKeyDown(controller.counterClockwiseKey)) {
+			rigidBody.angularSpeed += controller.maxAngularSpeed;
+		}
+		// Shoot projectiles
+		if (IsKeyDown(controller.shootingKey)) {
+			// TODO: Create a new component "LifeSpan" to despawn projectiles after some time
+		}
+	}	
+}
+
 void ECSManager::SystemPhysicsUpdate(f32 dt)
 {
 	for (auto& transform : transforms) {
 		//v Update position ==============================================
 		// Based on velocity ====================
-		const auto& body = GetComponent<Rigidbody2D>(transform.entityId);
-		const Vector2 velocity = body.velocity;
+		const auto& rigidBody = GetComponent<Rigidbody2D>(transform.entityId);
+		const Vector2 velocity = rigidBody.velocity;
 
 		transform.pos = { transform.pos.x + velocity.x * dt, transform.pos.y + velocity.y * dt };
 	

@@ -178,6 +178,7 @@
     <ClInclude Include="..\engine\Renderer.hpp" />
     <ClInclude Include="..\engine\Window.hpp" />
     <ClInclude Include="..\game\Components.hpp" />
+    <ClInclude Include="..\game\Consts.hpp" />
     <ClInclude Include="..\game\ECSManager.hpp" />
     <ClInclude Include="..\game\Entity.hpp" />
     <ClInclude Include="..\game\Game.hpp" />

@@ -60,6 +60,8 @@ struct Rigidbody2D {
 	Vector2 pos{ 0.0f, 0.0f };
 	Rectangle boundingBox{ 0, 0, 1, 1 };
 	Vector2 velocity{ 0.0f, 0.0f };
+	float forwardSpeed{ 0.0f };
+	float angularSpeed{ 0.0f };
 
 	[[nodiscard]] Rectangle GetPositionedRectangle() const {
 		return Rectangle{ pos.x + boundingBox.x, pos.y + boundingBox.y, boundingBox.width, boundingBox.height };
@@ -90,6 +92,15 @@ struct Controller {
 	}
 
 	u64 entityId;
+	
+	float maxForwardSpeed{ 0.0f };
+	float maxAngularSpeed{ 0.0f };
+
+	int forwardKey{ 0 };
+	int backwardKey{ 0 };
+	int clockwiseKey{ 0 };
+	int counterClockwiseKey{ 0 };
+	int shootingKey{ 0 };
 };
 
 // Utils

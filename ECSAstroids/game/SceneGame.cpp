@@ -36,11 +36,10 @@ void SceneGame::Load() {
 
 	Sprite& shipSprite = ecs->CreateSpriteComponent(ship, "Ship");
 	Rigidbody2D& shipRb = ecs->CreateRigidbody2DComponent(ship, Vector2{ 0, 0 }, shipSprite.srcRect);
-	shipRb.velocity = { 40.0f, 10.0f };
+	shipRb.velocity = { 100.0f, 10.0f };
 	  
 	// -- ASTROIDS --
 	// Random values
-	
 	i32 maxAstroidsCount{ 10 };
 	i16 maxXPos = Consts::WINDOW_WIDTH * 0.9f;
 	i16 maxYPos = Consts::WINDOW_HEIGHT * 0.9f;
