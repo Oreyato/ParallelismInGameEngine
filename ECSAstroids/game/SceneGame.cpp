@@ -1,11 +1,10 @@
 #include "SceneGame.hpp"
 #include "../engine/AssetsManager.hpp"
+#include "Consts.hpp"
 
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-
 
 
 SceneGame::SceneGame(shared_ptr<ECSManager> ecsRef,	Game& game): 
@@ -41,9 +40,10 @@ void SceneGame::Load() {
 	  
 	// -- ASTROIDS --
 	// Random values
+	
 	i32 maxAstroidsCount{ 10 };
-	i16 maxXPos = 1280 * 0.9f;
-	i16 maxYPos = 720 * 0.9f;
+	i16 maxXPos = Consts::WINDOW_WIDTH * 0.9f;
+	i16 maxYPos = Consts::WINDOW_HEIGHT * 0.9f;
 	i16 maxVelocity = 50;
 	i16 minVelocity = -50;
 

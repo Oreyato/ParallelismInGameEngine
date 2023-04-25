@@ -11,11 +11,12 @@
 
 #include "../engine/Engine.hpp"
 #include "../game/Game.hpp"
+#include "../game/Consts.hpp"
 
 int main()
 {
 	Engine engine;
-	engine.Start(1280, 720, "ECS implementation", std::make_unique<Game>());
+	engine.Start(Consts::WINDOW_WIDTH, Consts::WINDOW_HEIGHT, "ECS implementation", std::make_unique<Game>());
 
 	return 0;
 }
