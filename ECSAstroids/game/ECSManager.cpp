@@ -52,6 +52,11 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 	FindEntity(entityId).components[iComponentIndex] = newComponentId;
 }
 
+void ECSManager::SystemPhysicsUpdate(f32 dt)
+{
+
+}
+
 void ECSManager::SystemSpriteDraw() {
 	for (auto& sprite : sprites) {
 		Color colorAlpha{ 255, 255, 255, sprite.opacity };
@@ -104,7 +109,4 @@ void ECSManager::PrepareDraw() {
 	}
 }
 
-void ECSManager::SystemPhysicsUpdate(float dt) {
-
-}
 

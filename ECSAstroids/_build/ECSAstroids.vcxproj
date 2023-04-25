@@ -183,7 +183,6 @@
     <ClInclude Include="..\game\Game.hpp" />
     <ClInclude Include="..\game\IScene.hpp" />
     <ClInclude Include="..\game\SceneGame.hpp" />
-    <ClInclude Include="SceneGame.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\engine\AssetsManager.cpp" />

@@ -34,4 +34,4 @@ private:
 
 };
 
-#endif //GAMEIMPL_SCENE_GAME_HPP
+#endif //GAMEIMPL_SCENE_GAME_HPP

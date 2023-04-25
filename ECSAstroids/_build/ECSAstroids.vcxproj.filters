@@ -42,7 +42,6 @@
     <ClInclude Include="..\engine\Window.hpp">
       <Filter>engine</Filter>
     </ClInclude>
-    <ClInclude Include="SceneGame.hpp" />
     <ClInclude Include="..\game\SceneGame.hpp">
       <Filter>game</Filter>
     </ClInclude>
