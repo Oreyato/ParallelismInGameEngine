@@ -51,11 +51,6 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 	FindEntity(entityId).components[iComponentIndex] = newComponentId;
 }
 
-void ECSManager::SystemPhysicsUpdate(f32 dt)
-{
-
-}
-
 void ECSManager::SystemSpriteDraw() {
 	for (auto& sprite : sprites) {
 		Color colorAlpha{ 255, 255, 255, sprite.opacity };
@@ -104,8 +99,12 @@ void ECSManager::PrepareDraw() {
 	// Update sprite positions
 	for (auto& sprite : sprites) {
 		const auto& transform = GetComponent<Transform2D>(sprite.entityId);
-		sprite.dstRect = { transform.pos.x, transform.pos.y, static_cast<float>(sprite.tex.width), static_cast<float>(sprite.tex.height) };
+		sprite.dstRect = { transform.pos.x, transform.pos.y, static_cast<float>(sprite.tex.width) * transform.scale.x, static_cast<float>(sprite.tex.height) * transform.scale.y };
 	}
 }
 
+void ECSManager::SystemPhysicsUpdate(f32 dt)
+{
+
+}
 

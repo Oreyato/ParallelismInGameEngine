@@ -27,7 +27,7 @@ struct Transform2D {
 	u64 entityId;
 	Vector2 pos{ 0.0f, 0.0f };
 	float rotation{ 0.0f };
-	Vector2 scale{ 0.0f, 0.0f };
+	Vector2 scale{ 1.0f, 1.0f };
 };
 
 struct Sprite {
