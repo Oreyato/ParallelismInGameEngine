@@ -38,8 +38,7 @@ Sprite& ECSManager::CreateSpriteComponent(u64 entityId, const str& texName) {
 	return sprites.back();
 }
 
-Rigidbody2D& ECSManager::CreateRigidbody2DComponent(u64 entityId, const Vector2& pos,
-	const Rectangle& box) {
+Rigidbody2D& ECSManager::CreateRigidbody2DComponent(u64 entityId, const Vector2& pos, const Rectangle& box) {
 	i32 newComponentId = static_cast<i32>(bodies.size());
 	bodies.emplace_back(entityId, pos, box);
 	UpdateEntityWithComponent(entityId, newComponentId, ComponentIndex::Rigidbody2D);

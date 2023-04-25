@@ -17,12 +17,10 @@ void Game::Update(f32 dt) {
 }
 
 void Game::Draw() {
-	//ecs->PrepareDraw();
 	for (auto&& scene : std::ranges::reverse_view(sceneStack)) {
 		scene->Draw();
 		if (!scene->GetTransparent()) break;
 	}
-	//ecs->DrawScene();
 }
 
 void Game::AddScene(unique_ptr<IScene> newScene) {
