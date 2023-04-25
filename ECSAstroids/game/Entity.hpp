@@ -5,14 +5,14 @@
 
 #include <array>
 
-constexpr i32 MAX_COMPONENTS = 3;
+constexpr i32 MAX_COMPONENTS = 4;
 
 
 struct Entity {
 	explicit Entity(u64 idP) : id{ idP } {}
 
 	u64 id;
-	std::array<i32, MAX_COMPONENTS> components{ -1, -1, -1 };
+	std::array<i32, MAX_COMPONENTS> components{ -1, -1, -1, -1 };
 
 };
 

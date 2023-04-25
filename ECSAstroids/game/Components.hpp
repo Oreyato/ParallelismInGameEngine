@@ -15,10 +15,12 @@ using std::vector;
 
 class ECSManager;
 
+
 enum class ComponentIndex {
 	Transform2D = 0,
 	Sprite = 1,
 	Rigidbody2D = 2,
+	Controller = 3,
 };
 
 struct Transform2D {
@@ -79,6 +81,15 @@ struct Rigidbody2D {
 		render::DrawRectangleLines(box, BLUE);
 	}
 #endif
+};
+
+struct Controller {
+	explicit Controller(u64 entityIdP) :
+		entityId{ entityIdP }
+	{
+	}
+
+	u64 entityId;
 };
 
 // Utils
