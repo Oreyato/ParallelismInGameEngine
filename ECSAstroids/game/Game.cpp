@@ -5,7 +5,11 @@
 
 
 void Game::Load() {
+	// Init jobs
+	jobs::Initialize();
+	// Init Entity Component System
 	ecs = std::make_shared<ECSManager>();
+	// Init first scene
 	AddScene(std::make_unique<SceneGame>(ecs, *this));
 }
 

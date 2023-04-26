@@ -2,6 +2,7 @@
 #define GAMEIMPL_GAME_HPP
 
 #include "../engine/IGame.hpp"
+#include "../engine/Jobs.hpp"
 #include "IScene.hpp"
 #include "ECSManager.hpp"
 
