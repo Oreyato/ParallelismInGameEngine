@@ -1,4 +1,4 @@
-#include "EcsManager.hpp"
+﻿#include "EcsManager.hpp"
 #include "Consts.hpp"
 
 u64 ECSManager::maxId = 0;
@@ -53,6 +53,8 @@ void ECSManager::UpdateEntityWithComponent(u64 entityId, i32 newComponentId, Com
 	FindEntity(entityId).components[iComponentIndex] = newComponentId;
 }
 
+//v =============================================================╗
+//v Systems                                                      ║
 
 void ECSManager::SystemInputUpdate()
 {
@@ -77,7 +79,7 @@ void ECSManager::SystemInputUpdate()
 		if (IsKeyDown(controller.shootingKey)) {
 			// TODO: Create a new component "LifeSpan" to despawn projectiles after some time
 		}
-	}	
+	}
 }
 
 void ECSManager::SystemPhysicsUpdate(f32 dt)
@@ -89,7 +91,7 @@ void ECSManager::SystemPhysicsUpdate(f32 dt)
 		const Vector2 velocity = rigidBody.velocity;
 
 		transform.pos = { transform.pos.x + velocity.x * dt, transform.pos.y + velocity.y * dt };
-	
+
 		// Based on screen position =============
 		const auto& sprite = GetComponent<Sprite>(transform.entityId);
 		const int texHeight = sprite.tex.height;
@@ -125,6 +127,11 @@ void ECSManager::SystemSpriteDraw() {
 	}
 #endif
 }
+
+//^ Systems                                                      ║
+//^ =============================================================╝
+
+
 
 void ECSManager::RemoveEntity(u64 entityId) {
 	entitiesToRemove.push_back(entityId);
