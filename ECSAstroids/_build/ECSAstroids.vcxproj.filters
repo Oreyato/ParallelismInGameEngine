@@ -54,6 +54,9 @@
     <ClInclude Include="..\game\Consts.hpp">
       <Filter>game</Filter>
     </ClInclude>
+    <ClInclude Include="..\engine\Jobs.hpp">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\game\src\Main.cpp">
@@ -82,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="..\game\Game.cpp">
       <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine\Jobs.cpp">
+      <Filter>engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

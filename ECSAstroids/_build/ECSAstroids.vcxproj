@@ -175,6 +175,7 @@
     <ClInclude Include="..\engine\Engine.hpp" />
     <ClInclude Include="..\engine\GMath.hpp" />
     <ClInclude Include="..\engine\IGame.hpp" />
+    <ClInclude Include="..\engine\Jobs.hpp" />
     <ClInclude Include="..\engine\Renderer.hpp" />
     <ClInclude Include="..\engine\Window.hpp" />
     <ClInclude Include="..\game\Components.hpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="..\engine\AssetsManager.cpp" />
     <ClCompile Include="..\engine\Engine.cpp" />
     <ClCompile Include="..\engine\GMath.cpp" />
+    <ClCompile Include="..\engine\Jobs.cpp" />
     <ClCompile Include="..\engine\Renderer.cpp" />
     <ClCompile Include="..\engine\Window.cpp" />
     <ClCompile Include="..\game\ECSManager.cpp" />
